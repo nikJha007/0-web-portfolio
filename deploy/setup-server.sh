@@ -85,14 +85,18 @@ if [[ -L /etc/nginx/sites-enabled/default ]]; then
   sudo rm -f /etc/nginx/sites-enabled/default
 fi
 
+# --- start nginx -----------------------------------------------------------
+# Must happen before the first deploy, because deploy.sh reloads the service
+# and a reload against a never-started unit fails.
+
+log "Enabling nginx at boot and starting it"
+sudo systemctl enable --now nginx
+
 # --- first deploy ----------------------------------------------------------
 
 log "Running first deploy"
 SRC_DIR="$SRC_DIR" WEB_ROOT="$WEB_ROOT" NGINX_USER="$NGINX_USER" \
   bash "$SRC_DIR/deploy/deploy.sh" --skip-pull
-
-log "Enabling nginx at boot"
-sudo systemctl enable --now nginx
 
 cat <<EOF
 

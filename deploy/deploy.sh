@@ -81,7 +81,14 @@ sudo find "$WEB_ROOT" -type f -exec chmod 644 {} +
 log "Validating nginx config"
 sudo nginx -t
 
-log "Reloading nginx"
-sudo systemctl reload nginx
+# 'reload' only works on a running unit. On a first deploy nginx has never
+# been started, so start it rather than failing the whole script.
+if sudo systemctl is-active --quiet nginx; then
+  log "Reloading nginx"
+  sudo systemctl reload nginx
+else
+  log "nginx is not running, starting it"
+  sudo systemctl enable --now nginx
+fi
 
 log "Done. Published $(cd "$SRC_DIR" && git rev-parse --short HEAD 2>/dev/null || echo 'working tree')"
