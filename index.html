@@ -4,13 +4,14 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<!-- EDIT: title is what shows in the browser tab and as the search result headline -->
+<!-- EDIT: shows in the browser tab and as the search result headline -->
 <title>Your Name — Your Headline Role</title>
 <meta name="description" content="One sentence on who you are and what you build. This is the snippet search engines show.">
 <meta name="author" content="Your Name">
+<meta name="theme-color" content="#100d0a">
 <link rel="canonical" href="https://yourdomain.com/">
 
-<!-- EDIT: controls the preview card when the link is shared -->
+<!-- EDIT: preview card when the link is shared -->
 <meta property="og:type" content="website">
 <meta property="og:title" content="Your Name — Your Headline Role">
 <meta property="og:description" content="One sentence on who you are and what you build.">
@@ -26,13 +27,16 @@
 
 <nav class="nav" aria-label="Section navigation">
   <div class="wrap">
-    <strong>Your Name</strong>
+    <a class="nav-name" href="#main">
+      <span class="dot" aria-hidden="true"></span>
+      Your Name
+    </a>
     <ul>
       <li><a href="#about">About</a></li>
-      <li><a href="#experience">Experience</a></li>
+      <li><a href="#experience">Work</a></li>
       <li><a href="#projects">Projects</a></li>
       <li><a href="#writing">Writing</a></li>
-      <li><a href="#skills">Skills</a></li>
+      <li><a href="#skills">Stack</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
   </div>
@@ -41,180 +45,286 @@
 <main id="main">
 
   <!-- ==================== HERO ==================== -->
-  <header class="hero wrap">
-    <h1>Your Name<br><span>Your Headline Role</span></h1>
-    <p>
-      Two sentences on what you do and who you do it for. Make it concrete: the
-      domain you work in, the kind of systems you build, the outcome you drive.
-    </p>
-    <div class="cta">
-      <a class="btn btn-primary" href="#projects">See my work</a>
-      <a class="btn btn-ghost" href="/assets/resume.pdf">Download r&eacute;sum&eacute;</a>
+  <header class="hero">
+    <div class="wrap">
+      <div class="hero-grid">
+
+        <div>
+          <p class="hero-eyebrow">Portfolio &middot; 2026</p>
+
+          <h1>
+            Your Name
+            <span class="alt">Your Headline Role</span>
+          </h1>
+
+          <p class="hero-lede">
+            Two sentences on what you do and who you do it for. Be concrete:
+            the domain you work in, the systems you build, the outcome you drive.
+          </p>
+
+          <p class="hero-meta">
+            <span>Bengaluru, India</span>
+            <span>&middot;</span>
+            <span>Open to new roles</span>
+            <span>&middot;</span>
+            <span>12+ years</span>
+          </p>
+
+          <div class="cta">
+            <a class="btn btn-primary" href="#projects">See the work</a>
+            <a class="btn btn-ghost" href="/assets/resume.pdf">R&eacute;sum&eacute;</a>
+          </div>
+        </div>
+
+        <!-- Swap the fallback div for a photo when you have one:
+             <img src="/assets/img/portrait.jpg" alt="Portrait of Your Name"> -->
+        <figure class="portrait">
+          <div class="portrait-fallback" aria-hidden="true"><span>N</span></div>
+          <figcaption>
+            <span>Currently</span>
+            <span>Senior Engineer</span>
+          </figcaption>
+        </figure>
+
+      </div>
     </div>
   </header>
 
   <!-- ==================== 01 ABOUT ==================== -->
-  <section id="about" class="wrap reveal">
-    <p class="eyebrow">01 &middot; About</p>
-    <h2 class="h2">A one-line thesis for your career</h2>
-    <p class="lede">
-      A short paragraph. Where you are now, what you were doing before, and the
-      through-line that connects them. Two or three sentences beats ten.
-    </p>
+  <section id="about">
+    <div class="wrap layout reveal">
+      <div class="rail">
+        <span class="rail-num">01</span>
+        <span class="rail-label">About</span>
+        <p class="rail-note">A short bio, one strong paragraph. Cut anything that reads like a job description.</p>
+      </div>
 
-    <dl class="stats">
-      <div><dt>12+</dt><dd>Years building software</dd></div>
-      <div><dt>30M+</dt><dd>Requests served daily</dd></div>
-      <div><dt>8</dt><dd>Systems shipped to production</dd></div>
-      <div><dt>20</dt><dd>Engineers mentored</dd></div>
-    </dl>
+      <div>
+        <h2 class="h2">A one-line thesis for <em>your career</em></h2>
+        <p class="lede">
+          Where you are now, what you were doing before, and the through-line
+          that connects them. Two or three sentences beats ten.
+        </p>
+
+        <dl class="figures">
+          <div><dt>12+</dt><dd>Years building software</dd></div>
+          <div><dt>30M+</dt><dd>Requests served daily</dd></div>
+          <div><dt>8</dt><dd>Systems in production</dd></div>
+          <div><dt>20</dt><dd>Engineers mentored</dd></div>
+        </dl>
+      </div>
+    </div>
   </section>
 
   <!-- ==================== 02 EXPERIENCE ==================== -->
-  <section id="experience" class="wrap reveal">
-    <p class="eyebrow">02 &middot; Experience</p>
-    <h2 class="h2">Where I've worked</h2>
-    <p class="lede">Lead with impact, not responsibilities. Numbers where you have them.</p>
+  <section id="experience">
+    <div class="wrap layout reveal">
+      <div class="rail">
+        <span class="rail-num">02</span>
+        <span class="rail-label">Work</span>
+        <p class="rail-note">Lead with impact, not responsibilities. Numbers where you have them.</p>
+      </div>
 
-    <ol class="timeline">
-      <li>
-        <p class="role">Senior Engineer &middot; <span class="org">Company Name</span></p>
-        <p class="when">2023 &mdash; PRESENT</p>
-        <p>What you own and what changed because of you. One or two sentences.</p>
-      </li>
-      <li>
-        <p class="role">Engineer &middot; <span class="org">Previous Company</span></p>
-        <p class="when">2020 &mdash; 2023</p>
-        <p>Same pattern. Scope, then outcome.</p>
-      </li>
-      <li>
-        <p class="role">Junior Engineer &middot; <span class="org">First Company</span></p>
-        <p class="when">2018 &mdash; 2020</p>
-        <p>Keep older roles to a single line.</p>
-      </li>
-    </ol>
+      <div>
+        <h2 class="h2">Where I&rsquo;ve <em>worked</em></h2>
+        <p class="lede">Roughly a decade across products people actually use.</p>
+
+        <!-- Duplicate one <li> per role, newest first. -->
+        <ol class="roles">
+          <li>
+            <p class="roles-when">2023 &mdash; Now</p>
+            <div>
+              <p class="roles-title">Senior Engineer <span>Company Name</span></p>
+              <p class="roles-desc">What you own and what changed because of you. One or two sentences.</p>
+            </div>
+          </li>
+          <li>
+            <p class="roles-when">2020 &mdash; 2023</p>
+            <div>
+              <p class="roles-title">Engineer <span>Previous Company</span></p>
+              <p class="roles-desc">Same pattern. Scope, then outcome.</p>
+            </div>
+          </li>
+          <li>
+            <p class="roles-when">2018 &mdash; 2020</p>
+            <div>
+              <p class="roles-title">Junior Engineer <span>First Company</span></p>
+              <p class="roles-desc">Keep older roles to a single line.</p>
+            </div>
+          </li>
+        </ol>
+      </div>
+    </div>
   </section>
 
   <!-- ==================== 03 PROJECTS ==================== -->
-  <section id="projects" class="wrap reveal">
-    <p class="eyebrow">03 &middot; Projects</p>
-    <h2 class="h2">Things I've built</h2>
-    <p class="lede">
-      Three strong projects beat eight weak ones. For each, say what problem it
-      solves and one interesting technical decision you made.
-    </p>
+  <section id="projects">
+    <div class="wrap layout reveal">
+      <div class="rail">
+        <span class="rail-num">03</span>
+        <span class="rail-label">Projects</span>
+        <p class="rail-note">Three strong projects beat eight weak ones.</p>
+      </div>
 
-    <div class="cards">
-      <!-- Duplicate one <article class="card"> block per project -->
-      <article class="card">
-        <h3>Project Name</h3>
-        <p>
-          What it does in one sentence. Then the interesting part: an architectural
-          choice, a constraint you worked around, a result you measured.
+      <div>
+        <h2 class="h2">Things I&rsquo;ve <em>built</em></h2>
+        <p class="lede">
+          For each one: the problem it solves, and the one decision that made it
+          non-trivial.
         </p>
-        <div class="tags">
-          <span class="tag">Python</span>
-          <span class="tag">Postgres</span>
-          <span class="tag">Docker</span>
-        </div>
-        <div class="links">
-          <a href="https://example.com">Live demo</a>
-          <a href="https://github.com/you/repo">Source</a>
-        </div>
-      </article>
 
-      <article class="card">
-        <h3>Second Project</h3>
-        <p>Keep descriptions roughly the same length so the grid stays even.</p>
-        <div class="tags">
-          <span class="tag">TypeScript</span>
-          <span class="tag">AWS</span>
-        </div>
-        <div class="links">
-          <a href="https://github.com/you/repo">Source</a>
-        </div>
-      </article>
+        <!-- Duplicate one <li class="work-item"> per project. Renumber work-idx. -->
+        <ol class="work">
+          <li class="work-item">
+            <p class="work-idx" aria-hidden="true">01</p>
+            <div class="work-body">
+              <h3>Project Name</h3>
+              <p>
+                What it does in one sentence. Then the interesting part: an
+                architectural choice, a constraint you worked around, a result
+                you measured.
+              </p>
+              <ul class="tags">
+                <li class="tag">Python</li>
+                <li class="tag">Postgres</li>
+                <li class="tag">Docker</li>
+              </ul>
+              <div class="links">
+                <a href="https://example.com">Live demo</a>
+                <a href="https://github.com/you/repo">Source</a>
+              </div>
+            </div>
+          </li>
 
-      <article class="card">
-        <h3>Third Project</h3>
-        <p>What it does, then the one thing that made it non-trivial.</p>
-        <div class="tags">
-          <span class="tag">Go</span>
-          <span class="tag">Redis</span>
-        </div>
-        <div class="links">
-          <a href="https://github.com/you/repo">Source</a>
-        </div>
-      </article>
+          <li class="work-item">
+            <p class="work-idx" aria-hidden="true">02</p>
+            <div class="work-body">
+              <h3>Second Project</h3>
+              <p>What it does, then the thing that made it hard.</p>
+              <ul class="tags">
+                <li class="tag">TypeScript</li>
+                <li class="tag">AWS</li>
+              </ul>
+              <div class="links">
+                <a href="https://github.com/you/repo">Source</a>
+              </div>
+            </div>
+          </li>
+
+          <li class="work-item">
+            <p class="work-idx" aria-hidden="true">03</p>
+            <div class="work-body">
+              <h3>Third Project</h3>
+              <p>Same shape again. Keep them comparable in length.</p>
+              <ul class="tags">
+                <li class="tag">Go</li>
+                <li class="tag">Redis</li>
+              </ul>
+              <div class="links">
+                <a href="https://github.com/you/repo">Source</a>
+              </div>
+            </div>
+          </li>
+        </ol>
+      </div>
     </div>
   </section>
 
-  <!-- ==================== 04 WRITING ==================== -->
-  <!-- Delete this whole section if you don't write. An empty blog reads worse than no blog. -->
-  <section id="writing" class="wrap reveal">
-    <p class="eyebrow">04 &middot; Writing</p>
-    <h2 class="h2">Notes and write-ups</h2>
-    <p class="lede">One line on the kind of thing you write about.</p>
+  <!-- ==================== 04 WRITING ====================
+       Delete this whole section if you don't write. -->
+  <section id="writing">
+    <div class="wrap layout reveal">
+      <div class="rail">
+        <span class="rail-num">04</span>
+        <span class="rail-label">Writing</span>
+        <p class="rail-note">Copy posts/first-post.html as the template for each new article.</p>
+      </div>
 
-    <ul class="posts">
-      <!-- One <li> per post. Copy posts/first-post.html as the template for
-           each new article, then add a matching entry here. -->
-      <li>
-        <a href="/posts/first-post.html">
-          <h3>Title of the post</h3>
-          <time datetime="2026-08-20">August 20, 2026</time>
-          <p>One line on what the reader gets out of it.</p>
-        </a>
-      </li>
-    </ul>
+      <div>
+        <h2 class="h2">Notes from <em>the field</em></h2>
+        <p class="lede">Write-ups of things I built and what they taught me.</p>
+
+        <ul class="posts">
+          <li>
+            <a href="/posts/first-post.html">
+              <time datetime="2026-08-20">Aug 20, 2026</time>
+              <div>
+                <h3>Title of the post</h3>
+                <p>One line on what the reader gets out of it.</p>
+              </div>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
   </section>
 
   <!-- ==================== 05 SKILLS ==================== -->
-  <section id="skills" class="wrap reveal">
-    <p class="eyebrow">05 &middot; Skills</p>
-    <h2 class="h2">Tools I reach for</h2>
-    <p class="lede">Group them. A flat wall of forty logos signals nothing.</p>
+  <section id="skills">
+    <div class="wrap layout reveal">
+      <div class="rail">
+        <span class="rail-num">05</span>
+        <span class="rail-label">Stack</span>
+        <p class="rail-note">Group them. A flat wall of forty logos signals nothing.</p>
+      </div>
 
-    <div class="group">
-      <h3>Languages</h3>
-      <ul class="chips">
-        <li class="chip">Python</li>
-        <li class="chip">TypeScript</li>
-        <li class="chip">Go</li>
-        <li class="chip">SQL</li>
-      </ul>
-    </div>
+      <div>
+        <h2 class="h2">Tools I <em>reach for</em></h2>
+        <p class="lede">Things I've shipped with, not things I've read about.</p>
 
-    <div class="group">
-      <h3>Infrastructure</h3>
-      <ul class="chips">
-        <li class="chip">AWS</li>
-        <li class="chip">Docker</li>
-        <li class="chip">Terraform</li>
-        <li class="chip">nginx</li>
-      </ul>
-    </div>
+        <div class="group">
+          <h3>Languages</h3>
+          <ul class="chips">
+            <li class="chip">Python</li>
+            <li class="chip">TypeScript</li>
+            <li class="chip">Go</li>
+            <li class="chip">SQL</li>
+          </ul>
+        </div>
 
-    <div class="group">
-      <h3>Data &amp; AI</h3>
-      <ul class="chips">
-        <li class="chip">Postgres</li>
-        <li class="chip">PyTorch</li>
-        <li class="chip">RAG</li>
-        <li class="chip">LangChain</li>
-      </ul>
+        <div class="group">
+          <h3>Infra</h3>
+          <ul class="chips">
+            <li class="chip">AWS</li>
+            <li class="chip">Docker</li>
+            <li class="chip">Terraform</li>
+            <li class="chip">nginx</li>
+          </ul>
+        </div>
+
+        <div class="group">
+          <h3>Data &amp; AI</h3>
+          <ul class="chips">
+            <li class="chip">Postgres</li>
+            <li class="chip">PyTorch</li>
+            <li class="chip">RAG</li>
+            <li class="chip">LangChain</li>
+          </ul>
+        </div>
+      </div>
     </div>
   </section>
 
   <!-- ==================== 06 CONTACT ==================== -->
-  <section id="contact" class="wrap contact reveal">
-    <p class="eyebrow">06 &middot; Contact</p>
-    <h2>Let's talk.</h2>
-    <p>One line on what you're open to: roles, freelance, collaboration, or just conversation.</p>
-    <div class="cta cta-center">
-      <a class="btn btn-primary" href="mailto:you@yourdomain.com">you@yourdomain.com</a>
-      <a class="btn btn-ghost" href="https://linkedin.com/in/you" rel="me noopener" target="_blank">LinkedIn</a>
-      <a class="btn btn-ghost" href="https://github.com/you" rel="me noopener" target="_blank">GitHub</a>
+  <section id="contact" class="contact">
+    <div class="wrap layout reveal">
+      <div class="rail">
+        <span class="rail-num">06</span>
+        <span class="rail-label">Contact</span>
+      </div>
+
+      <div>
+        <h2>Let&rsquo;s build <em>something good</em>.</h2>
+        <p class="contact-lede">
+          One line on what you're open to: roles, freelance, collaboration, or
+          just a conversation.
+        </p>
+        <div class="cta">
+          <a class="btn btn-primary" href="mailto:you@yourdomain.com">you@yourdomain.com</a>
+          <a class="btn btn-ghost" href="https://linkedin.com/in/you" rel="me noopener" target="_blank">LinkedIn</a>
+          <a class="btn btn-ghost" href="https://github.com/you" rel="me noopener" target="_blank">GitHub</a>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -223,7 +333,7 @@
 <footer>
   <div class="wrap">
     <span>&copy; <span id="yr">2026</span> Your Name</span>
-    <span>Built and hosted by hand.</span>
+    <span>Built by hand &middot; nginx on EC2</span>
   </div>
 </footer>
 

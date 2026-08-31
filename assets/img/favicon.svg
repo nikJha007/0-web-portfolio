@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Placeholder monogram favicon. EDIT: change the letter and colours. -->
+<!-- Placeholder monogram favicon. EDIT: change the letter. -->
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Monogram">
-  <rect width="64" height="64" rx="14" fill="#8b93f8"/>
+  <rect width="64" height="64" rx="12" fill="#100d0a"/>
+  <rect x="1.5" y="1.5" width="61" height="61" rx="10.5" fill="none" stroke="#ef8f4c" stroke-width="3"/>
   <text x="32" y="45"
         font-family="ui-sans-serif, -apple-system, Helvetica, Arial, sans-serif"
-        font-size="36" font-weight="700" fill="#0b0b0f" text-anchor="middle">N</text>
+        font-size="34" font-weight="800" fill="#ef8f4c" text-anchor="middle">N</text>
 </svg>

@@ -53,7 +53,9 @@
 
   /* -------------------------------------------------- active nav link --- */
 
-  var navLinks = Array.prototype.slice.call(document.querySelectorAll('.nav a'));
+  /* Scoped to the nav list, so the wordmark link (which also points at a
+     fragment) never picks up the active state. */
+  var navLinks = Array.prototype.slice.call(document.querySelectorAll('.nav ul a'));
   var linkFor = {};
 
   navLinks.forEach(function (link) {
