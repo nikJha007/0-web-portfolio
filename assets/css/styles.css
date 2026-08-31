@@ -1,0 +1,383 @@
+/* ==========================================================================
+   Portfolio stylesheet
+   Single dark theme. Edit the custom properties below to restyle the whole
+   site: colours, max content width, and type stack all live in one place.
+   ========================================================================== */
+
+:root {
+  --bg: #0b0b0f;
+  --elev: #13131a;
+  --line: #242430;
+  --line-hover: #3a3a4d;
+  --text: #e9e9ef;
+  --muted: #9a9aa8;
+  --accent: #8b93f8;
+  --accent-bright: #a3a9fa;
+  --accent-soft: rgba(139, 147, 248, .12);
+
+  --max: 1060px;
+  --gutter: 24px;
+  --nav-h: 60px;
+
+  --sans: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+          Helvetica, Arial, sans-serif;
+  --mono: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace;
+}
+
+/* --------------------------------------------------------------- reset --- */
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font: 400 16px/1.65 var(--sans);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+h1, h2, h3 { margin: 0; line-height: 1.2; letter-spacing: -.02em; }
+p { margin: 0; }
+a { color: inherit; }
+ul, ol { margin: 0; padding: 0; list-style: none; }
+dl, dd { margin: 0; }
+img { max-width: 100%; height: auto; display: block; }
+
+/* ----------------------------------------------------------- utilities --- */
+
+.wrap {
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: 0 var(--gutter);
+}
+
+/* Keyboard-only shortcut past the nav. Visible on focus. */
+.skip {
+  position: absolute;
+  left: -9999px;
+  top: 0;
+  z-index: 100;
+  padding: 12px 18px;
+  background: var(--accent);
+  color: #0b0b0f;
+  font-weight: 600;
+  text-decoration: none;
+  border-radius: 0 0 6px 0;
+}
+.skip:focus { left: 8px; top: 8px; }
+
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+  border-radius: 3px;
+}
+
+/* ----------------------------------------------------------------- nav --- */
+
+.nav {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: rgba(11, 11, 15, .82);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--line);
+}
+
+.nav .wrap {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  height: var(--nav-h);
+}
+
+.nav strong {
+  font-size: 15px;
+  letter-spacing: -.01em;
+  white-space: nowrap;
+}
+
+/* Scrolls horizontally on narrow screens instead of collapsing to a menu,
+   which keeps every section one tap away with no JS toggle. */
+.nav ul {
+  display: flex;
+  gap: 4px;
+  margin-left: auto;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+.nav ul::-webkit-scrollbar { display: none; }
+
+.nav a {
+  display: block;
+  padding: 7px 11px;
+  border-radius: 6px;
+  color: var(--muted);
+  font: 500 13px/1 var(--sans);
+  text-decoration: none;
+  white-space: nowrap;
+  transition: color .15s, background .15s;
+}
+.nav a:hover { color: var(--text); background: var(--elev); }
+.nav a[aria-current="true"] { color: var(--accent); background: var(--accent-soft); }
+
+/* ------------------------------------------------------------ sections --- */
+
+section {
+  padding: 88px 0;
+  border-top: 1px solid var(--line);
+  scroll-margin-top: var(--nav-h);
+}
+
+.eyebrow {
+  margin-bottom: 14px;
+  color: var(--accent);
+  font: 500 12px/1 var(--mono);
+  letter-spacing: .14em;
+  text-transform: uppercase;
+}
+
+.h2 {
+  margin-bottom: 8px;
+  font-size: clamp(24px, 3.4vw, 34px);
+}
+
+.lede {
+  max-width: 62ch;
+  margin: 0 0 40px;
+  color: var(--muted);
+  font-size: 17px;
+}
+
+/* ---------------------------------------------------------------- hero --- */
+
+.hero { padding: 100px 0 88px; }
+
+.hero h1 {
+  margin-bottom: 20px;
+  font-size: clamp(34px, 6.4vw, 62px);
+}
+.hero h1 span { color: var(--accent); }
+
+.hero p {
+  max-width: 60ch;
+  margin-bottom: 36px;
+  color: var(--muted);
+  font-size: clamp(17px, 2vw, 19px);
+}
+
+.cta { display: flex; flex-wrap: wrap; gap: 12px; }
+.cta-center { justify-content: center; }
+
+.btn {
+  display: inline-block;
+  padding: 11px 20px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  font: 600 14px/1.4 var(--sans);
+  text-decoration: none;
+  transition: border-color .15s, background .15s, color .15s;
+}
+.btn-primary {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #0b0b0f;
+}
+.btn-primary:hover { background: var(--accent-bright); border-color: var(--accent-bright); }
+.btn-ghost:hover { border-color: var(--accent); background: var(--accent-soft); }
+
+/* ----------------------------------------------------------- stat grid --- */
+
+.stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 1px;
+  background: var(--line);   /* shows through the gap as hairline dividers */
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  overflow: hidden;
+}
+.stats > div { background: var(--bg); padding: 22px 20px; }
+.stats dt {
+  font: 600 clamp(22px, 3vw, 30px)/1.1 var(--sans);
+  letter-spacing: -.02em;
+}
+.stats dd {
+  margin-top: 6px;
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.45;
+}
+
+/* ------------------------------------------------------------ timeline --- */
+
+.timeline {
+  margin-left: 6px;
+  border-left: 1px solid var(--line);
+}
+.timeline li {
+  position: relative;
+  padding: 0 0 36px 28px;
+}
+.timeline li:last-child { padding-bottom: 0; }
+.timeline li::before {
+  content: "";
+  position: absolute;
+  left: -4.5px;
+  top: 8px;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--accent);
+  box-shadow: 0 0 0 4px var(--bg);   /* masks the line behind the dot */
+}
+.role { font-size: 18px; font-weight: 600; }
+.org { color: var(--accent); font-weight: 500; }
+.when {
+  margin: 6px 0 10px;
+  color: var(--muted);
+  font: 500 12px/1 var(--mono);
+}
+.timeline li > p:last-child { color: var(--muted); }
+
+/* --------------------------------------------------------------- cards --- */
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(310px, 1fr));
+  gap: 18px;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  padding: 24px;
+  background: var(--elev);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  transition: border-color .15s, transform .15s;
+}
+.card:hover { border-color: var(--line-hover); transform: translateY(-2px); }
+.card h3 { margin-bottom: 10px; font-size: 18px; }
+.card > p { margin-bottom: 18px; color: var(--muted); font-size: 15px; }
+
+.tags { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 18px; }
+.tag {
+  padding: 6px 9px;
+  border-radius: 5px;
+  background: var(--accent-soft);
+  color: var(--accent);
+  font: 500 11px/1 var(--mono);
+  letter-spacing: .02em;
+}
+
+.links {
+  display: flex;
+  gap: 16px;
+  margin-top: auto;         /* pins links to the card bottom, so uneven
+                               description lengths still line up */
+  font-size: 14px;
+  font-weight: 600;
+}
+.links a { color: var(--accent); text-decoration: none; }
+.links a::after { content: " \2192"; }
+.links a:hover { text-decoration: underline; }
+
+/* --------------------------------------------------------------- posts --- */
+
+.posts li { border-bottom: 1px solid var(--line); }
+.posts a {
+  display: block;
+  padding: 22px 0;
+  text-decoration: none;
+  transition: padding-left .15s;
+}
+.posts a:hover { padding-left: 8px; }
+.posts h3 {
+  margin-bottom: 6px;
+  font-size: 17px;
+  font-weight: 600;
+  transition: color .15s;
+}
+.posts a:hover h3 { color: var(--accent); }
+.posts time { color: var(--muted); font: 500 12px/1 var(--mono); }
+.posts p {
+  max-width: 70ch;
+  margin-top: 8px;
+  color: var(--muted);
+  font-size: 15px;
+}
+
+/* --------------------------------------------------------------- chips --- */
+
+.group { margin-bottom: 28px; }
+.group:last-child { margin-bottom: 0; }
+.group h3 {
+  margin-bottom: 14px;
+  color: var(--muted);
+  font: 500 12px/1 var(--mono);
+  letter-spacing: .12em;
+  text-transform: uppercase;
+}
+.chips { display: flex; flex-wrap: wrap; gap: 8px; }
+.chip {
+  padding: 7px 13px;
+  border: 1px solid var(--line);
+  border-radius: 20px;
+  background: var(--elev);
+  font-size: 13px;
+}
+
+/* ------------------------------------------------------------- contact --- */
+
+.contact { text-align: center; padding-bottom: 64px; }
+.contact h2 { margin-bottom: 14px; font-size: clamp(26px, 4vw, 40px); }
+.contact > p { max-width: 52ch; margin: 0 auto 32px; color: var(--muted); }
+
+footer {
+  padding: 28px 0;
+  border-top: 1px solid var(--line);
+  color: var(--muted);
+  font-size: 13px;
+}
+footer .wrap {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  justify-content: space-between;
+}
+
+/* ------------------------------------------------------ scroll reveal --- */
+/* JS adds .in when the element scrolls into view. Without JS the element
+   still needs to be visible, which main.js handles by bailing out early. */
+
+.reveal {
+  opacity: 0;
+  transform: translateY(14px);
+  transition: opacity .5s ease, transform .5s ease;
+}
+.reveal.in { opacity: 1; transform: none; }
+
+/* ------------------------------------------------- reduced motion / print */
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .reveal { opacity: 1; transform: none; transition: none; }
+  .card, .posts a, .nav a, .btn { transition: none; }
+  .card:hover { transform: none; }
+  .posts a:hover { padding-left: 0; }
+}
+
+@media print {
+  .nav, .skip, .cta { display: none; }
+  body { background: #fff; color: #000; }
+  section { border-color: #ccc; padding: 24px 0; }
+  .reveal { opacity: 1; transform: none; }
+  a { text-decoration: underline; }
+}

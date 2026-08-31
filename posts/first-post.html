@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Title of the post — Your Name</title>
+<meta name="description" content="One sentence summarising the post, for search results.">
+<link rel="canonical" href="https://yourdomain.com/posts/first-post.html">
+<link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="/assets/css/styles.css">
+<style>
+  /* Article-specific layout: a single narrow column for comfortable reading. */
+  .article { max-width: 68ch; padding: 56px 0 88px; }
+  .article .back {
+    display: inline-block;
+    margin-bottom: 32px;
+    color: var(--accent);
+    font: 500 13px/1 var(--mono);
+    text-decoration: none;
+  }
+  .article .back:hover { text-decoration: underline; }
+  .article h1 { font-size: clamp(28px, 5vw, 42px); margin-bottom: 12px; }
+  .article .meta { color: var(--muted); font: 500 12px/1 var(--mono); margin-bottom: 40px; }
+  .article h2 { font-size: 22px; margin: 40px 0 12px; }
+  .article p, .article li { color: #cfcfda; margin-bottom: 18px; }
+  .article ul { list-style: disc; padding-left: 22px; margin-bottom: 18px; }
+  .article a { color: var(--accent); }
+  .article code {
+    font: 400 .9em/1.5 var(--mono);
+    background: var(--elev);
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    padding: 2px 6px;
+  }
+  .article pre {
+    background: var(--elev);
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    padding: 18px;
+    overflow-x: auto;
+    margin-bottom: 24px;
+  }
+  .article pre code { background: none; border: 0; padding: 0; }
+  .article blockquote {
+    margin: 0 0 24px;
+    padding-left: 18px;
+    border-left: 2px solid var(--accent);
+    color: var(--muted);
+  }
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<main id="main" class="article wrap">
+  <a class="back" href="/#writing">&larr; All writing</a>
+
+  <article>
+    <h1>Title of the post</h1>
+    <p class="meta">
+      <time datetime="2026-08-20">August 20, 2026</time> &middot; 6 min read
+    </p>
+
+    <p>
+      Open with the problem, not the preamble. What were you trying to do, and
+      what got in the way? A reader who recognises their own situation in the
+      first paragraph keeps reading.
+    </p>
+
+    <h2>A section heading</h2>
+    <p>
+      Body copy. Inline <code>code</code> looks like this, and links look
+      <a href="https://example.com">like this</a>.
+    </p>
+
+    <pre><code>$ echo "code blocks scroll horizontally instead of wrapping"</code></pre>
+
+    <ul>
+      <li>Bulleted lists work.</li>
+      <li>Keep them short.</li>
+    </ul>
+
+    <blockquote>
+      Pull quotes for the one line you want people to remember.
+    </blockquote>
+
+    <h2>What I'd do differently</h2>
+    <p>
+      Close with the honest retrospective. This is the part people actually
+      quote back to you.
+    </p>
+  </article>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>&copy; <span id="yr">2026</span> Your Name</span>
+    <a href="/">Home</a>
+  </div>
+</footer>
+
+<script src="/assets/js/main.js" defer></script>
+</body>
+</html>

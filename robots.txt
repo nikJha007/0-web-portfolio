@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+# EDIT: swap in your real domain once DNS points at the server.
+Sitemap: https://yourdomain.com/sitemap.xml
